@@ -1,12 +1,20 @@
+#argparse là một thư viện có sẵn trong Python dùng để viết CLI. Khi viết, chương trình của bạn sẽ định nghĩa các tham số cần thiết và argparse sẽ tìm cách truyền các tham số đó từ sys.argv.
 from argparse import ArgumentParser
 
+# sau khi xong việc tạo đối tượng dataset để dữ liệu tạo thành batch thì phải dùng hàm
 import torch.utils.data
 
+# Từ file data.py import 2 hàm read_all_data và all_devices
 from data import read_all_data, all_devices
+# Từ file federated_util.py import tất cả các funtion
 from federated_util import *
+# Từ file grid_search.py hàm run_grid_search
 from grid_search import run_grid_search
+# Từ file supervised_data.py import hàm get_client_supervised_initial_splitting
 from supervised_data import get_client_supervised_initial_splitting
+#Từ File test_hparams import hàm test_hyperparameters
 from test_hparams import test_hyperparameters
+# Từ file unsupervised_data import hàm get_client_unsupervised_initial_splitting
 from unsupervised_data import get_client_unsupervised_initial_splitting
 
 #changed cuda and gamma from 0.5 to 0.4, epoch  from 4 to 8 in classifier
